@@ -110,4 +110,10 @@ describe('Gilded Rose', function () {
         expect(items[0].sellIn).to.equal(6);
     });
 
+    it('Conjured Mana Cake degrade twice as fast as a normal item.', function() {
+        const gildedRose = new GildedRose([ new Item('Conjured Mana Cake', 6, 45) ]);
+        const items = gildedRose.updateQuality();
+        expect(items[0].quality).to.equal(43);
+    });
+
 });
